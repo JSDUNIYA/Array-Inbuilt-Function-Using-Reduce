@@ -8,6 +8,26 @@ if (!Array.prototype.jsdMap) {
     }, []);
   };
 }
+
+// Map using plain for loop
+
+if (!Array.prototype.jsdMap1) {
+  Array.prototype.jsdMap1 =  function (callback) {
+    var pp = [];
+    for (let i = 0; i < this.length; i++) {
+      pp[i] = callback(this[i]);
+    }
+    return pp;
+  };
+}
+
+var x = [2,3,4].jsdMap1(function(x){return x*3})
+
+console.log(x)
+
+
+
+
 // without arguments
 console.log(
   [1, 2, 3].jsdMap(function (x) {
